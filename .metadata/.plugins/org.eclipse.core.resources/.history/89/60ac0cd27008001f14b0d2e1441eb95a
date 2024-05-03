@@ -1,0 +1,8 @@
+package com.alphaware.repositories;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.alphaware.entities.Employee;
+
+public interface IEmployeeService extends MongoRepository<Employee, String>{
+
+}

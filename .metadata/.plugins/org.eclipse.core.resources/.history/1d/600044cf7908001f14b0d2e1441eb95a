@@ -1,0 +1,53 @@
+package com.alphaware.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.alphaware.entities.Employee;
+import com.alphaware.exceptions.RecordNotFoundException;
+import com.alphaware.iservices.IEmployeeService;
+import com.alphaware.repositories.IEmployeeRepository;
+
+@Service
+public class EmployeeService implements IEmployeeService {
+
+	@Autowired
+	private IEmployeeRepository employeeRepository;
+
+	@Override
+	public Employee addEmployee(Employee employee) {
+
+		return employeeRepository.save(employee);
+	}
+
+	@Override
+	public Employee get(String id) {
+		return employeeRepository.findById(id).get();
+	}
+
+	@Override
+	public List<Employee> get() {
+		return employeeRepository.findAll();
+	}
+
+	@Override
+	public Employee update(String id, Employee employee) {
+	  employeeRepository.findById(id)
+	            .orElseThrow(() -> new RecordNotFoundException("Record is Not Present with the id: " + id));
+
+	  
+	    return employeeRepository.save(existingEmployee);
+	}
+
+
+	@Override
+	public String delete(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

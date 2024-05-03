@@ -1,0 +1,5 @@
+package com.alphaware.services;
+
+public interface EmployeeService implements IEM {
+
+}

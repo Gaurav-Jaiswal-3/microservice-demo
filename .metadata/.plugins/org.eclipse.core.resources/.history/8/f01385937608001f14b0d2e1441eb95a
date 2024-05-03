@@ -1,0 +1,7 @@
+package com.alphaware.iservices;
+
+import com.alphaware.entities.Employee;
+
+public interface IEmployeeService {
+	public Employee addEmployee(Employee employee);
+}

@@ -1,0 +1,12 @@
+package com.alphaware.exceptions;
+
+import java.time.LocalDateTime;
+
+import lombok.Data;
+
+@Data
+public class APIErrorResponse {
+	private String message;
+	private LocalDateTime timeStamp;
+	private String setStatusCode;
+}

@@ -1,0 +1,8 @@
+package com.alphaware.controllers;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestControllerss
+public class EmployeeController {
+
+}

@@ -1,0 +1,47 @@
+package com.alphaware.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alphaware.entities.Employee;
+import com.alphaware.iservices.IEmployeeService;
+import com.alphaware.repositories.IEmployeeRepository;
+
+@Service
+public class EmployeeService implements IEmployeeService {
+
+	@Autowired
+	private IEmployeeRepository employeeRepository;
+
+	@Override
+	public Employee addEmployee(Employee employee) {
+
+		return employeeRepository.save(employee);
+	}
+
+	@Override
+	public Employee get(String id) {
+		return employeeRepository.findById(id);
+	}
+
+	@Override
+	public List<Employee> get() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee update(String id, Employee employee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

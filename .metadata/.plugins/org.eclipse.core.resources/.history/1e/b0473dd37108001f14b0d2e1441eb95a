@@ -1,0 +1,22 @@
+package com.alphaware.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.alphaware.entities.Employee;
+import com.alphaware.exceptions.AlreadyExistException;
+import com.alphaware.iservices.IEmployeeService;
+import com.alphaware.repositories.IEmployeeRepository;
+
+public class EmployeeService implements IEmployeeService {
+
+	@Autowired
+	private IEmployeeRepository employeeRepository;
+	
+	@Override
+	public Employee addEmployee(Employee employee) throws AlreadyExistException {
+		employeeRepository.findById(employee.getId()).ifPresentOrElse(
+				 throw new AlreadyExistException("java"), this.employeeRepository.save(employee));
+		
+	}
+
+}

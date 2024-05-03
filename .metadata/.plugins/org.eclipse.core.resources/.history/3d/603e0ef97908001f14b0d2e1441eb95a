@@ -1,0 +1,18 @@
+package com.alphaware.iservices;
+
+import java.util.List;
+
+import com.alphaware.entities.Employee;
+
+public interface IEmployeeService {
+	public Employee addEmployee(Employee employee);
+
+	public Employee get(String id);
+
+	public List<Employee> get();
+
+	public Employee update(String id, Employee employee);
+
+	public String delete(String id);
+
+}

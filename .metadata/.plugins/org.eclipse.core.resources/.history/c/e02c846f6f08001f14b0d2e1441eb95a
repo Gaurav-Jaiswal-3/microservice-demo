@@ -1,0 +1,5 @@
+package com.alphaware.iservices;
+
+public interface IEmployeeService {
+
+}

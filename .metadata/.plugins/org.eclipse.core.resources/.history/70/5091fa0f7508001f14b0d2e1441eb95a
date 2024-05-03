@@ -1,0 +1,9 @@
+package com.alphaware.entities;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collation = "Department")
+public class Department {
+	private String name;
+	private String location;
+}

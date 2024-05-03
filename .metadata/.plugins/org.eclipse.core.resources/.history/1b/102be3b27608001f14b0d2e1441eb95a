@@ -1,0 +1,22 @@
+package com.alphaware.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alphaware.entities.Employee;
+import com.alphaware.iservices.IEmployeeService;
+import com.alphaware.repositories.IEmployeeRepository;
+
+@Service
+public class EmployeeService implements IEmployeeService {
+
+	@Autowired
+	private IEmployeeRepository employeeRepository;
+
+	@Override
+	public Employee addEmployee(Employee employee) {
+
+		return employeeRepository.save(employee);
+	}
+
+}

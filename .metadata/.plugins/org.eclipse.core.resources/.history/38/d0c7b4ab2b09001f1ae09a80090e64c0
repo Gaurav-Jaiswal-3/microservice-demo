@@ -1,0 +1,18 @@
+package com.alphaware.configurations;
+
+import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
+import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
+
+@KeycloakConfiguration
+public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
+
+	@Override
+	protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

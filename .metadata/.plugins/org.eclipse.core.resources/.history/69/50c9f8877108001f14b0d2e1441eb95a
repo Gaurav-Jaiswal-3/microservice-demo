@@ -1,0 +1,14 @@
+package com.alphaware.services;
+
+import com.alphaware.entities.Employee;
+import com.alphaware.exceptions.AlreadyExistException;
+import com.alphaware.iservices.IEmployeeService;
+
+public class EmployeeService implements IEmployeeService {
+
+	@Override
+	public Employee addEmployee(Employee employee) throws AlreadyExistException {
+		
+	}
+
+}

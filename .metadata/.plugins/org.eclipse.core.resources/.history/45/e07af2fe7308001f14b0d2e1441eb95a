@@ -1,0 +1,23 @@
+package com.alphaware.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alphaware.entities.Employee;
+import com.alphaware.exceptions.AlreadyExistException;
+import com.alphaware.iservices.IEmployeeService;
+
+@RestController
+public class EmployeeController {
+
+	@Autowired
+	private IEmployeeService employeeService;
+
+	ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) throws AlreadyExistException {
+
+		return new ResponseEntity<>(employeeService.addEmployee(employee), HttpStatus.CREATED);
+	}
+}

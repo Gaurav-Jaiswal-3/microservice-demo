@@ -1,0 +1,4 @@
+package com.alphaware.exceptions;
+
+public class DataNotFoundException extends Exception {
+sjjj}

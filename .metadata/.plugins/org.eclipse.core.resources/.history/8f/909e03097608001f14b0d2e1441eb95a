@@ -1,0 +1,8 @@
+package com.alphaware.iservices;
+
+import com.alphaware.entities.Employee;
+import com.alphaware.exceptions.AlreadyExistException;
+
+public interface IEmployeeService {
+public Employee addEmployee(Employee employee); 
+}
